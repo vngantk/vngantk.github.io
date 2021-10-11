@@ -1,0 +1,24 @@
+/* Customizations to the designer theme should be defined here */
+@import "./_variables";
+
+.p-carousel {
+    .p-carousel-indicators .p-carousel-indicator.p-highlight button {
+        background-color: $primaryColor;
+    }
+}
+
+.p-galleria {
+    .p-galleria-indicators .p-galleria-indicator.p-highlight button {
+        background-color: $primaryColor;
+    }
+}
+
+.p-button {
+    font-weight: $buttonFontWeight;
+}
+
+.p-field > label {
+    color: $inputFieldLabelColor;
+    font-size: $inputFieldLabelFontSize;
+    font-weight: $inputFieldLabelFontWeight;
+}
