@@ -1,0 +1,572 @@
+/* Customizations to the designer theme should be defined here */
+
+$captionTextColor: #222222;
+$captionHighlightBgColor: #C5E0F2;
+$tokenBgColor: #C5E0F2;
+
+$disabledTextColor: #f7f7f7;
+$disabledBgColor: #cccccc;
+
+$menuBg: #f7f7f7;
+$menuHoverBg: #f1f2f3;
+
+.p-button {
+  height: 2.5rem;
+  font-weight: 700;
+
+  &:disabled {
+    color: $disabledTextColor;
+    background: $disabledBgColor;
+    border-color: $disabledBgColor;
+  }
+
+  @include button-states {
+    &:hover {
+      transform: scale(1.1, 1.1);
+    }
+
+    &:active {
+      opacity: 0.8;
+      transform: none;
+    }
+  }
+}
+
+.p-button.p-button-secondary, .p-buttonset.p-button-secondary > .p-button, .p-splitbutton.p-button-secondary > .p-button, .p-fileupload-choose.p-button-secondary {
+
+  &.p-button-outlined {
+    background-color: transparent;
+    color: $secondaryButtonTextColor;
+    border-color: $secondaryButtonTextColor;
+
+    @include button-states {
+      &:hover {
+        color: $secondaryButtonTextColor;
+      }
+
+      &:active {
+        color: $secondaryButtonTextColor;
+      }
+    }
+  }
+
+  &.p-button-text {
+    background-color: transparent;
+    color: $secondaryButtonTextColor;
+    border-color: transparent;
+
+    @include button-states {
+      &:hover {
+        color: $secondaryButtonTextColor;
+      }
+
+      &:active {
+        color: $secondaryButtonTextColor;
+      }
+    }
+  }
+}
+
+.p-buttonset > .p-button, .p-inputwrapper > .p-button, .p-inputnumber-button-group > .p-button {
+
+  @include button-states {
+    &:hover {
+      transform: none;
+    }
+  }
+}
+
+.p-checkbox + label {
+  color: $captionTextColor;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.p-checkbox-box > .p-checkbox-icon {
+  font-weight: 700;
+}
+
+.p-checkbox-box.p-disabled {
+  border-color: $disabledBgColor;
+  background-color: $menuHoverBg;
+}
+
+.p-checkbox.p-checkbox-disabled + label {
+  color: $disabledTextColor;
+}
+
+.p-checkbox.p-error > .p-checkbox-box {
+  border-color: $errorColor;
+}
+
+.p-checkbox + label {
+  small.p-error {
+    display: block;
+    position: absolute;
+    line-height: 1.5rem;
+    font-style: italic;
+  }
+}
+
+.p-inputtext {
+  border-radius: 0;
+  border: none;
+  border-bottom: $inputBorder;
+}
+
+.p-inputtextarea {
+  border: $inputBorder;
+  border-radius: $borderRadius;
+  padding: 0.25rem;
+}
+
+.p-field label {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #002E6D;
+}
+
+.p-slider {
+  border: 0.5rem none;
+  border-radius: 0.5rem;
+
+  .p-slider-range {
+    border: 0.5rem none;
+    border-radius: 0.5rem;
+  }
+  .p-slider-handle {
+    box-shadow: rgb(0 0 0 / 10%) 0 1px 2px 0, rgb(0 0 0 / 10%) 0 2px 4px 0, rgb(0 0 0 / 10%) 0 4px 8px 0;
+
+    &:focus {
+      outline: none;
+      box-shadow: rgb(0 0 0 / 10%) 0 1px 2px 0, rgb(0 0 0 / 10%) 0 2px 4px 0, rgb(0 0 0 / 10%) 0 4px 8px 0;
+    }
+  }
+}
+
+.p-slider.p-disabled {
+  .p-slider-range {
+    background-color: $disabledBgColor;
+  }
+  .p-slider-handle {
+    background-color: #FFFFFF;
+  }
+}
+
+.p-datepicker-header {
+  .p-datepicker-prev-icon:before {
+    content: "\e91a";
+  }
+  .p-datepicker-next-icon:before {
+    content: "\e91b";
+  }
+}
+
+table.p-datepicker-calendar > thead > tr > th {
+  span {
+    font-size: 0;
+  }
+}
+
+table.p-datepicker-calendar > thead > tr > th {
+  span:before {
+    font-size: 0.75rem;
+    color: #777777;
+  }
+}
+
+table.p-datepicker-calendar > thead > tr {
+  th:nth-child(1) {
+    span:before {
+      content: "S";
+    }
+  }
+  th:nth-child(2) {
+    span:before {
+      content: "M";
+    }
+  }
+  th:nth-child(3) {
+    span:before {
+      content: "T";
+    }
+  }
+  th:nth-child(4) {
+    span:before {
+      content: "W";
+    }
+  }
+  th:nth-child(5) {
+    span:before {
+      content: "T";
+    }
+  }
+  th:nth-child(6) {
+    span:before {
+      content: "F";
+    }
+  }
+  th:nth-child(7) {
+    span:before {
+      content: "S";
+    }
+  }
+}
+
+.p-datepicker-other-month {
+  .p-disabled {
+    color: $disabledBgColor;
+  }
+}
+
+.p-inputswitch.p-disabled .p-inputswitch-slider {
+  background-color: #DDDDDD;
+
+  :before {
+    background-color: $disabledBgColor;
+  }
+}
+
+a {
+  color: $primaryColor;
+  :visited {
+    color: #551A8B;
+  }
+  :disabled {
+    color: $disabledBgColor;
+  }
+}
+
+.p-tabview .p-tabview-nav li .p-tabview-nav-link:not(.p-disabled):focus {
+  outline: 0 none;
+  outline-offset: 0;
+  box-shadow: none;
+}
+
+.p-datepicker .p-datepicker-header {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.p-chips {
+  &.p-inputwrapper {
+    border: none;
+    border-bottom: 1px solid $captionTextColor;
+    border-radius: 0;
+    color: $captionTextColor;
+
+    &:hover {
+      border-bottom-color: $primaryColor;
+    }
+
+    input, .p-inputtext {
+      border: none;
+    }
+  }
+
+  .p-chips-multiple-container:not(.p-disabled).p-focus {
+    outline: none;
+    box-shadow: none;
+    background-color: rgba(0, 155, 222, 5%);
+  }
+}
+
+.p-calendar.p-inputwrapper, .p-autocomplete.p-inputwrapper, .p-dropdown.p-inputwrapper, .p-multiselect.p-inputwrapper {
+  border: none;
+  border-bottom: 1px solid $captionTextColor;
+  border-radius: 0;
+  color: $captionTextColor;
+
+  &:hover {
+    border-bottom-color: $primaryColor;
+  }
+
+  input, .p-inputtext {
+    border: none;
+  }
+
+  button.p-button {
+    @extend .p-button-text;
+    border: none;
+    color: $captionTextColor;
+
+    @include button-states {
+      &:hover {
+        border: none;
+        color: $primaryColor;
+        background: none;
+      }
+    }
+  }
+
+  .p-dropdown-trigger-icon.pi, .p-multiselect-trigger-icon.pi {
+    color: $captionTextColor;
+    &:hover {
+      border: none;
+      color: $primaryColor;
+      background: none;
+    }
+  }
+}
+
+input.p-inputtext {
+  &:enabled:focus {
+    outline: none;
+    box-shadow: none;
+    background-color: rgba(0, 155, 222, 5%);
+  }
+}
+
+.p-calendar-w-btn .p-inputtext {
+  &:enabled:focus {
+    outline: none;
+    box-shadow: none;
+    background-color: rgba(0, 155, 222, 5%);
+  }
+}
+
+.p-autocomplete .p-autocomplete-multiple-container:not(.p-disabled).p-focus {
+    box-shadow: none;
+    background-color: rgba(0, 155, 222, 5%);
+
+}
+
+.p-dropdown, .p-multiselect {
+  &:not(.p-disabled).p-focus {
+    box-shadow: none;
+    background-color: rgba(0, 155, 222, 5%);
+  }
+}
+
+.p-inputnumber-buttons-stacked {
+  border: none;
+  border-bottom: 1px solid $captionTextColor;
+  border-radius: 0;
+  color: $captionTextColor;
+
+  &:hover {
+    border-bottom-color: $primaryColor;
+  }
+
+  input.p-inputnumber-input {
+    border: none;
+    &:focus {
+      box-shadow: none;
+      background-color: rgba(0, 155, 222, 5%);
+    }
+  }
+  .p-inputnumber-button-group .p-button.p-inputnumber-button {
+    @extend .p-button-text;
+    border: none;
+    color: $captionTextColor;
+    height: unset;
+
+    @include button-states {
+      &:hover {
+        border: none;
+        color: $primaryColor;
+        background: none;
+      }
+    }
+  }
+}
+
+.p-dropdown-panel .p-dropdown-items .p-dropdown-item {
+  color: $captionTextColor;
+  font-weight: 500;
+
+  &.p-highlight {
+    color: $captionTextColor;
+    font-weight: 500;
+    background-color: $captionHighlightBgColor;
+  }
+}
+
+.p-multiselect-panel .p-multiselect-items .p-multiselect-item {
+  color: $captionTextColor;
+  font-weight: 500;
+
+  &.p-highlight {
+    color: $captionTextColor;
+    font-weight: 500;
+    background-color: $captionHighlightBgColor;
+  }
+
+  &:focus {
+    box-shadow: none;
+  }
+}
+
+.p-listbox {
+
+  .p-listbox-header {
+    background: none;
+  }
+
+  .p-listbox-list .p-listbox-item {
+    color: $captionTextColor;
+    font-weight: 500;
+
+    &.p-highlight {
+      color: $captionTextColor;
+      font-weight: 500;
+      background-color: $captionHighlightBgColor;
+    }
+
+    &:focus {
+      box-shadow: none;
+    }
+  }
+}
+
+.p-autocomplete-panel .p-autocomplete-items .p-autocomplete-item {
+  color: $captionTextColor;
+  font-weight: 500;
+
+  &.p-highlight {
+    color: $captionTextColor;
+    font-weight: 500;
+    background-color: $captionHighlightBgColor;
+  }
+
+  &:focus {
+    box-shadow: none;
+  }
+}
+
+.p-autocomplete .p-autocomplete-multiple-container .p-autocomplete-token {
+  color: $captionTextColor;
+  font-weight: 500;
+  background: $tokenBgColor;
+  padding: 0.3rem 0.5rem;
+}
+
+.p-chips .p-chips-multiple-container .p-chips-token {
+  color: $captionTextColor;
+  font-weight: 500;
+  background: $tokenBgColor;
+  padding: 0.3rem 0.5rem;
+}
+
+.p-autocomplete-token-icon, .p-chips-token-icon {
+
+  &.pi.pi-times-circle:before {
+    content: "\e90b";
+  }
+
+  .p-inputtext {
+    color: $captionTextColor;
+  }
+
+  .p-input-icon-left > .p-inputtext {
+    padding-left: 1.75rem;
+  }
+}
+
+.p-tieredmenu, .p-menubar, .p-menu, .p-menu.p-menu-overlay, .p-contextmenu, .p-tieredmenu .p-submenu-list, .p-menubar .p-submenu-list {
+  background: $menuBg;
+  color: $captionTextColor;
+  border: none;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 0.125rem 0 rgba(109, 140, 171, 0.4);
+
+  .p-menuitem-link {
+    color: $captionTextColor;
+
+    &:not(.p-disabled):hover {
+      background-color: $menuHoverBg;
+      box-shadow: none;
+      color: $primaryColor;
+
+      .p-menuitem-icon, .p-menuitem-text, .p-submenu-icon {
+        color: $primaryColor;
+      }
+    }
+
+    .p-menuitem-icon, .p-menuitem-text, .p-submenu-icon {
+      color: $captionTextColor;
+    }
+  }
+}
+
+.p-menubar {
+  padding: 0 0.5rem 0 0.5rem;
+  min-height: 3.375rem;
+  display: flex;
+  align-items: stretch;
+
+  .p-menubar-root-list {
+    display: flex;
+    align-items: stretch;
+
+    .p-menuitem {
+      display: flex;
+      align-items: stretch;
+
+      .p-menuitem-link {
+        .p-menuitem-icon, .p-menuitem-text, .p-submenu-icon {
+          color: $captionTextColor;
+        }
+      }
+
+      .p-menuitem-link:not(.p-disabled):hover {
+        background-color: $menuHoverBg;
+        .p-menuitem-icon, .p-menuitem-text, .p-submenu-icon {
+          color: $primaryColor;
+        }
+      }
+
+      .p-submenu-list {
+        top: 3.3rem;
+      }
+    }
+  }
+}
+
+.p-menu .p-submenu-header {
+  color: #002E6D;
+  background: $menuBg;
+  font-weight: 700;
+}
+
+.p-datatable .p-datatable-thead > tr > th {
+  background-color: $menuBg;
+  border-bottom-color: $primaryColor;
+  border-bottom-width: 0.125rem;
+  font-weight: 700;
+  padding: 1.15rem 1rem 1.25rem 1rem;
+}
+.p-datatable .p-datatable-tbody > tr > td {
+  padding: 0.5rem 1rem;
+  border-bottom-width: 0.125rem;
+}
+
+.p-datatable.p-datatable-hoverable-rows .p-datatable-tbody > tr:not(.p-highlight):hover {
+  background: $menuHoverBg;
+  color: #002E6D;
+}
+
+.p-datatable .p-datatable-tbody > tr.p-highlight {
+  background: $captionHighlightBgColor;
+  color: #002E6D;
+}
+
+.p-tabview .p-tabview-nav li:not(.p-highlight):not(.p-disabled):hover .p-tabview-nav-link {
+  background: #ffffff;
+  border-color: $primaryColor;//#9ba2aa;
+  color: $primaryColor;//#6c757d;
+}
+
+.p-tabview .p-tabview-nav li {
+  &.p-highlight .p-tabview-nav-link {
+    border-color: #002E6D;
+    color: #002E6D;
+    background-color: $menuBg;
+    font-weight: 700;
+    border-top-left-radius: 0.25rem;
+    border-top-right-radius: 0.25rem;
+  }
+  .p-tabview-nav-link {
+    font-weight: 700;
+  }
+}
